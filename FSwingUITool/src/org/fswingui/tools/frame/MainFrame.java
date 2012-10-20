@@ -82,7 +82,7 @@ public class MainFrame extends JFrame{
         c.add(new CreateEastPanel() );
         c.add(new CreateCenterPanel() );       
         this.createPart=c;         
-        
+        System.out.println("dddddddddddddddd");
         
     }
     

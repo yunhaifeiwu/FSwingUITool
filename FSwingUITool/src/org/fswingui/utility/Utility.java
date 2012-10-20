@@ -201,7 +201,7 @@ public class Utility {
      //<editor-fold defaultstate="collapsed" desc=" Test"> 
     
     public static  void main(String[] args) {
-        System.out.println("ddd");
+        
        fromHexString_Test();
      
        List<AbstractPaint> lis=getExpandPaint();
