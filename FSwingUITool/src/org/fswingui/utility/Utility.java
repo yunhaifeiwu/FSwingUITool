@@ -83,9 +83,10 @@ public class Utility {
          
         List<String> rlist=new ArrayList();      
         String str=packageName;
+        System.out.println("ddddd");
         try {
            
-           URI uri = AbstractPaint.class.getResource("").toURI();
+           URI uri = AbstractPaint.class.getResource("/").toURI();
            str=uri.getPath()+str.replaceAll("[.]", "/");
 //           File f=new File(str);
             File f=new File(uri.getSchemeSpecificPart());
@@ -93,7 +94,6 @@ public class Utility {
           
            Queue<File> queue=new LinkedList<File>();  
            queue.offer(f);
-        
            while (queue.size()>0){               
                f=queue.poll();
                if (f==null) continue;                
