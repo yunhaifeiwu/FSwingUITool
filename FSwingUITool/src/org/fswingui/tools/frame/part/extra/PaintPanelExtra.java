@@ -57,7 +57,7 @@ public class PaintPanelExtra extends PaintPanel {
     
     @Override
     public void init(){  
-        
+         
         if (currentData==null)  {
              super.init();
              return;

@@ -492,7 +492,7 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
      * @return  CurrentData  -----当前dataBus 中的CurrentData实例。<br>
      *          注意这是引用，非克隆
      */
-    public CurrentData  cofingToCurrentData(CurrentDataCofig cdCfg){
+    public CurrentData  cofingToCurrentData(CurrentDataCofig cdCfg) throws InstantiationException{
         CurrentData cd=dataBus.getCurrentData();
         this.cdCfg=cdCfg;
         
@@ -729,12 +729,14 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
         BaseData bd=new BaseData(cd);
         bd.setId(bc.getId());
         bd.setLeaf(bc.isLeaf());
-        bd.setContained(bc.isContained());   
+        bd.setContained(bc.isContained()); 
+        
         MapPropertys mps=configToMapPropertys(bc.getPropertys());
-        int x=(int) mps.getProperty(PropertyCriterion.X).value;
-        int y=(int) mps.getProperty(PropertyCriterion.Y).value;
-        int w=(int) mps.getProperty(PropertyCriterion.WIDTH).value;
-        int h=(int) mps.getProperty(PropertyCriterion.HEIGHT).value;
+        
+        int x=Integer.parseInt( mps.getProperty(PropertyCriterion.X).value.toString());
+        int y=Integer.parseInt( mps.getProperty(PropertyCriterion.Y).value.toString());
+        int w=Integer.parseInt( mps.getProperty(PropertyCriterion.WIDTH).value.toString());
+        int h=Integer.parseInt( mps.getProperty(PropertyCriterion.HEIGHT).value.toString());
         bd.setMapPropertys(mps);       
         bd.setZorder(bc.getZorder(), false);
         JPanel centerPanel=(JPanel)dataBus.getGuiParts().
@@ -787,7 +789,7 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
        return mapp;
    }
    
-    public AbstractPaint configToPaint(PaintConfig paintCfg) {
+    public AbstractPaint configToPaint(PaintConfig paintCfg) throws InstantiationException {
         if (paintCfg==null) return null;
         AbstractPaint paint=null;
         if(paintCfg.getType()!=null && ! paintCfg.getType().equals("")){
@@ -796,7 +798,7 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
                 cls = Class.forName(paintCfg.getType());
                 try {
                     paint=(AbstractPaint) cls.newInstance();
-                } catch (InstantiationException | IllegalAccessException ex) {
+                } catch (IllegalAccessException ex) {
                     Logger.getLogger(AbstractFSUIConfig.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } catch (ClassNotFoundException ex) {
@@ -827,7 +829,7 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
                         try {
                             bcode=(BaseParameterCoding) cls.newInstance();
                             bcode.setParameter(par);
-                        } catch (InstantiationException | IllegalAccessException ex) {
+                        } catch ( IllegalAccessException ex) {
                             Logger.getLogger(AbstractFSUIConfig.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     } catch (ClassNotFoundException ex) {

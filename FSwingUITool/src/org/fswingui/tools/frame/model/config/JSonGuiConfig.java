@@ -66,7 +66,11 @@ public class JSonGuiConfig extends AbstractFGuiConfig {
                     jsonString = jsonString + temp;
                 } 
                 CurrentDataCofig cfg= (CurrentDataCofig) JSON.parse(jsonString);
-                cofingToCurrentData(cfg);
+                try {
+                    cofingToCurrentData(cfg);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(JSonGuiConfig.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
                 bl=true;
 //                JOptionPane.showMessageDialog(null, "成功导入！");

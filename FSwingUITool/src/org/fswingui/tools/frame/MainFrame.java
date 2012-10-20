@@ -4,46 +4,18 @@
  */
 package org.fswingui.tools.frame;
 
-import javax.swing.UnsupportedLookAndFeelException;
-import org.fswingui.tools.frame.part.Factory;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.beans.PropertyChangeEvent;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JSplitPane;
 import javax.swing.LookAndFeel;
-import javax.swing.SpringLayout;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
-import org.fswingui.plaf.SubjectEntity;
-import org.fswingui.plaf.UIEngine;
-import org.fswingui.plaf.tools.paint.AbstractPaint;
-import org.fswingui.plaf.tools.paint.expand.CrystalPaint;
-import org.fswingui.plaf.ui.FButtonUI;
-import org.fswingui.plaf.ui.FPanelUI;
 import org.fswingui.plaf.ui.FSwingLF;
 import org.fswingui.tools.frame.model.DataBus;
 import org.fswingui.tools.frame.part.CreateCenterPanel;

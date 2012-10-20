@@ -9,23 +9,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.io.File;
-import java.io.FilenameFilter;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -33,29 +17,21 @@ import javax.swing.AbstractCellEditor;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.event.CellEditorListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.filechooser.FileFilter;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumnModel;
 import org.fswingui.plaf.SubjectEntity;
 import org.fswingui.plaf.tools.paint.AbstractPaint;
-import org.fswingui.plaf.tools.paint.expand.CrystalPaint;
 import org.fswingui.tools.frame.model.MapPropertys;
 import org.fswingui.tools.frame.model.MapPropertys.PropertyUnit;
 import org.fswingui.tools.frame.model.PropertyCriterion;
-import org.fswingui.utility.Utility;
 
 /**
  *
@@ -299,8 +275,8 @@ public class PropertyPanel extends JPanel{
        
         
         table.setModel(model);
-//        table.setPreferredScrollableViewportSize(new Dimension(200,300));
-//        table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        table.setPreferredScrollableViewportSize(new Dimension(200,300));
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         TableColumnModel tcm=table.getColumnModel(); 
         tcm.removeColumn(tcm.getColumn(4));//隐藏第五列
         tcm.removeColumn(tcm.getColumn(3));//隐藏第四列        

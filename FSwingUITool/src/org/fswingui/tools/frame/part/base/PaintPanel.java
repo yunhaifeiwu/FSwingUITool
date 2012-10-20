@@ -300,8 +300,8 @@ public class PaintPanel extends JPanel{
        
         
         
-//        table.setPreferredScrollableViewportSize(new Dimension(200,300));
-//        table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        table.setPreferredScrollableViewportSize(new Dimension(200,300));
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         TableColumnModel tcm=table.getColumnModel(); 
         tcm.removeColumn(tcm.getColumn(3));//隐藏第四列
         tcm.removeColumn(tcm.getColumn(0));//隐藏第一列
@@ -320,6 +320,7 @@ public class PaintPanel extends JPanel{
          //以下制作一个表单
          paintLable=new JLabel("绘制函数",JLabel.RIGHT);
          if (paintStyle==null)
+//             paintStyle=new JComboBox();
              paintStyle=new JComboBox(Utility.getExpandPaint().toArray());
          idLabel=new JLabel("具体ID",JLabel.RIGHT);
          if (idText==null)
