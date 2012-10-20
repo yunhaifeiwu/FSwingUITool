@@ -18,8 +18,9 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.fswingui.plaf.tools.paint.AbstractPaint;
-import sun.applet.Main;
+ 
 
 /**
  *
@@ -79,14 +80,15 @@ public class Utility {
      * @return 返回类名
      */
     public static List<String> getFiles(String packageName,Boolean classNameType){
-        
+         
         List<String> rlist=new ArrayList();      
         String str=packageName;
         try {
-           URL url = Main.class.getResource("/");
-           URI uri = url.toURI();
+           
+           URI uri = AbstractPaint.class.getResource("").toURI();
            str=uri.getPath()+str.replaceAll("[.]", "/");
-           File f=new File(str);
+//           File f=new File(str);
+            File f=new File(uri.getSchemeSpecificPart());
            if ( f==null) return null;
           
            Queue<File> queue=new LinkedList<File>();  
@@ -96,8 +98,11 @@ public class Utility {
                f=queue.poll();
                if (f==null) continue;                
                if (f.listFiles()!=null) {
-                  for(File ft:f.listFiles())//添加所有直接子文件到队列
-                      queue.offer(ft); 
+                  for(File ft:f.listFiles()) {
+                       queue.offer(ft);
+                       System.out.println("ddddd");
+                       System.out.println(ft.isDirectory());
+                   } 
                }
                if (!f.isDirectory()){
                    String temp=f.getPath();
@@ -151,7 +156,7 @@ public class Utility {
                     Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
                 }
            } 
-           System.out.println();
+           
            return list;
         
     }
