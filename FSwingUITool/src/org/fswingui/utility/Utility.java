@@ -85,27 +85,40 @@ public class Utility {
      * @param classNameType 类名格式，true 为完整类名，false为简写类名
      * @return 返回类名
      */
-    public static List<String> getFiles(String packageName,Boolean classNameType) throws UnsupportedEncodingException, IOException{
+    public static List<String> getFiles(String packageName,Boolean classNameType) {
          
         List<String> rlist=new ArrayList();  
         
         URL url = AbstractPaint.class.getProtectionDomain().getCodeSource().getLocation();
-        String filePath = URLDecoder.decode(url.getPath(), "UTF-8");
+        String filePath = null;
+        try {
+            filePath = URLDecoder.decode(url.getPath(), "UTF-8");
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if(filePath.endsWith(".jar")) {
             System.out.println(filePath);
         }
 
             //java.util.jar.JarFile file = new JarFile("E:\\frame\\jdbc\\mysql.jar");
-        java.util.jar.JarFile file = new JarFile(filePath);
+        java.util.jar.JarFile file = null;
+        try {
+            file = new JarFile(filePath);
+        } catch (IOException ex) {
+            Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
+        }
             Enumeration<JarEntry> entrys = file.entries();
             while(entrys.hasMoreElements()){
                 JarEntry jar = entrys.nextElement();
                 rlist.add(jar.getName());
                 System.out.println(jar.getName());
             }
-
+        try {
 
             file.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
 //        String str=packageName;
 //        System.out.println("ddddd");
@@ -161,7 +174,7 @@ public class Utility {
      * 在 Utility.PAINT_PACKAGE 所指定包中，找到所有继承了AbstractPaint的类，
      * 并生成实例返回。
      */
-    public static List<AbstractPaint> getExpandPaint() throws UnsupportedEncodingException, IOException{     
+    public static List<AbstractPaint> getExpandPaint() {     
            List<String> liststr=getFiles(Utility.PAINT_PACKAGE+".expand",true); 
            List<AbstractPaint> list=new ArrayList();
             
@@ -187,7 +200,7 @@ public class Utility {
     }
      //<editor-fold defaultstate="collapsed" desc=" Test"> 
     
-    public static  void main(String[] args) throws UnsupportedEncodingException, IOException{
+    public static  void main(String[] args) {
        fromHexString_Test();
      
        List<AbstractPaint> lis=getExpandPaint();
