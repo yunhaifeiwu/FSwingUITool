@@ -74,7 +74,7 @@ public class Utility {
         }
     }
     
-    //<editor-fold defaultstate="collapsed" desc=" Test"> 
+   
     public static void fromHexString_Test(){
         Color c=  Utility.fromHexString("ffffc800");
         System.out.println(c);
@@ -91,8 +91,9 @@ public class Utility {
         
         URL url = AbstractPaint.class.getProtectionDomain().getCodeSource().getLocation();
         String filePath = URLDecoder.decode(url.getPath(), "UTF-8");
-        if(filePath.endsWith(".jar"))
-        System.out.println(filePath);
+        if(filePath.endsWith(".jar")) {
+            System.out.println(filePath);
+        }
 
             //java.util.jar.JarFile file = new JarFile("E:\\frame\\jdbc\\mysql.jar");
         java.util.jar.JarFile file = new JarFile(filePath);
@@ -184,6 +185,7 @@ public class Utility {
            return list;
         
     }
+     //<editor-fold defaultstate="collapsed" desc=" Test"> 
     
     public static  void main(String[] args) throws UnsupportedEncodingException, IOException{
        fromHexString_Test();
