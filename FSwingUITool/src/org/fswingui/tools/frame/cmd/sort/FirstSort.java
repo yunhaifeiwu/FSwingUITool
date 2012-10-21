@@ -13,7 +13,7 @@ import org.fswingui.tools.frame.model.CurrentData;
 import org.fswingui.tools.frame.model.DataBus;
 import org.fswingui.tools.gui.component.adapter.DivSta;
 import org.fswingui.tools.gui.component.extra.Div;
-import org.fswingui.utility.MapSort;
+import org.fswingui.utilities.MapSort;
 
 /**
  * 排到最前

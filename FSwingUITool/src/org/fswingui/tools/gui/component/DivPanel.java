@@ -27,7 +27,7 @@ import org.fswingui.plaf.SubjectEntityDoor;
 import org.fswingui.plaf.ui.FPanelUI;
 import org.fswingui.tools.frame.model.BaseData;
 import org.fswingui.tools.frame.model.CurrentData;
-import org.fswingui.utility.SpringUtilities;
+import org.fswingui.utilities.SpringUtilities;
 import org.fswingui.tools.gui.component.adapter.DropMouseAdapter;
 import org.fswingui.tools.gui.component.adapter.DropMouseAdapter;
 import org.fswingui.tools.gui.component.adapter.DropMouseAdapter;

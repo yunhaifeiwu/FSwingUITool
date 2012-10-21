@@ -27,7 +27,7 @@ import org.fswingui.plaf.Style;
 import org.fswingui.plaf.UIEngine;
 import org.fswingui.tools.frame.model.CurrentData;
 import org.fswingui.tools.frame.part.base.MainColortPanel;
-import org.fswingui.utility.Utility;
+import org.fswingui.utilities.Utility;
 
 /**
  *

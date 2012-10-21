@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.fswingui.utility;
+package org.fswingui.utilities;
 
 import java.awt.Color;
 import java.io.File;
@@ -12,7 +12,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -22,7 +24,10 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.logging.FileHandler;
+import java.util.logging.Formatter;
 import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.fswingui.plaf.tools.paint.AbstractPaint;
@@ -88,16 +93,14 @@ public class Utility {
     public static List<String> getFiles(String packageName,Boolean classNameType) {
          
         List<String> rlist=new ArrayList();  
-        
+        String str=packageName;
+        str=str.replaceAll("[.]", "/")+"/";
         URL url = AbstractPaint.class.getProtectionDomain().getCodeSource().getLocation();
         String filePath = null;
         try {
             filePath = URLDecoder.decode(url.getPath(), "UTF-8");
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if(filePath.endsWith(".jar")) {
-            System.out.println(filePath);
         }
 
             //java.util.jar.JarFile file = new JarFile("E:\\frame\\jdbc\\mysql.jar");
@@ -110,8 +113,31 @@ public class Utility {
             Enumeration<JarEntry> entrys = file.entries();
             while(entrys.hasMoreElements()){
                 JarEntry jar = entrys.nextElement();
-                rlist.add(jar.getName());
-                System.out.println(jar.getName());
+                if(jar==null || jar.getName()==null ||
+                        !jar.getName().contains(".class")
+                ){//不是类，忽略掉
+                    continue;
+                }
+                               
+                
+                String[] bags=jar.getName().split(str);                
+                if(bags.length<=1)  continue;
+                String p=jar.getName();     
+                if (classNameType) {
+                   //把路径分界符\" 转换成包分界符
+                   String[] strs=p.split(".class");
+                   p=strs[0];
+                   p=p.replaceAll("\\\\", "."); 
+                   p=p.replaceAll("/", "."); 
+                   rlist.add(p);  
+               } else {
+                   String[] strs=p.split("/");
+                   strs=strs[strs.length-1].split(".class");
+                   rlist.add(strs[0]);  
+               }
+             
+                 
+                
             }
         try {
 
@@ -197,6 +223,32 @@ public class Utility {
            
            return list;
         
+    }
+    /**
+     * 
+     * @param filename-----日志记录所在文件
+     * @return 返回一个能日志处理
+     */
+    public static FileHandler getMyFileHandler (String filename){
+        
+        if( filename==null) filename="E:/testlog%g.log";
+        FileHandler fileHandler = null;  
+        try {
+            fileHandler = new FileHandler(filename, true);
+        } catch (IOException ex) {
+            Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        fileHandler.setLevel(Level.SEVERE);  
+        fileHandler.setFormatter(new Formatter(){  
+            public String format(LogRecord record){  
+                SimpleDateFormat sd = new SimpleDateFormat("[yyyy-MM-dd HH:mm:ss]");    
+                String d = sd.format(new Date());    
+                return d + record.getLevel() + ":" + record.getMessage() + "/n";  
+            }  
+        });    
+        return fileHandler;
     }
      //<editor-fold defaultstate="collapsed" desc=" Test"> 
     

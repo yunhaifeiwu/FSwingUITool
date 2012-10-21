@@ -7,6 +7,8 @@ package org.fswingui.tools.frame;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -82,7 +84,6 @@ public class MainFrame extends JFrame{
         c.add(new CreateEastPanel() );
         c.add(new CreateCenterPanel() );       
         this.createPart=c;         
-        System.out.println("dddddddddddddddd");
         
     }
     
@@ -145,22 +146,31 @@ public class MainFrame extends JFrame{
     
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException, Exception {
        
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {      
+                String lnfName ="org.fswingui.plaf.ui.FSwingLF";
+                LookAndFeel fSwingLF = new FSwingLF();
+                FSwingLF.setInitStyle(FSwingLF.DEFALT_LOAD);
+                UIManager.LookAndFeelInfo info = new UIManager.LookAndFeelInfo(
+                    fSwingLF.getName(),fSwingLF.getClass().getName()
+                );
+                UIManager.installLookAndFeel(info);
+                try {
+                    UIManager.setLookAndFeel(fSwingLF);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                MainFrame f=new MainFrame();
+                f.init();
+
+
+                f.setVisible(true); // Display the window 
+            }
+        }); 
         
-        
-        String lnfName ="org.fswingui.plaf.ui.FSwingLF";
-        LookAndFeel fSwingLF = new FSwingLF();
-        FSwingLF.setInitStyle(FSwingLF.DEFALT_LOAD);
-        UIManager.LookAndFeelInfo info = new UIManager.LookAndFeelInfo(
-            fSwingLF.getName(),fSwingLF.getClass().getName()
-        );
-        UIManager.installLookAndFeel(info);
-        UIManager.setLookAndFeel(fSwingLF);
-       
-        MainFrame f=new MainFrame();
-        f.init();
-        
-        
-        f.setVisible(true); // Display the window 
+                
   }
 
    

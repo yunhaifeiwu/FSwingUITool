@@ -1,11 +1,11 @@
 {
 	"@type":"org.fswingui.tools.frame.model.config.CurrentDataCofig",
 	"allData":{"@type":"java.util.LinkedHashMap",
-		"0.6082894772969734":{
+		"0.327964251191065":{
 			"@type":"org.fswingui.tools.frame.model.config.BaseDataConfig",
 			"contained":false,
 			"divClassName":"org.fswingui.tools.gui.component.extra.BaseDiv",
-			"id":"0.6082894772969734",
+			"id":"0.327964251191065",
 			"leaf":true,
 			"propertys":{"@type":"java.util.LinkedHashMap",
 				"name":{
@@ -13,17 +13,17 @@
 					"disable":false,
 					"index":0,
 					"name":"name",
-					"strValue":"0.6082894772969734",
+					"strValue":"0.327964251191065",
 					"title":"名称",
 					"type":"java.lang.String",
-					"value":"0.6082894772969734"
+					"value":"0.327964251191065"
 				},
 				"subjectID":{
 					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
 					"disable":false,
 					"index":1,
 					"name":"subjectID",
-					"strValue":"aaa",
+					"strValue":"aa",
 					"title":"主题",
 					"type":"org.fswingui.plaf.SubjectEntity",
 					"value":""
@@ -53,20 +53,20 @@
 					"disable":false,
 					"index":4,
 					"name":"x",
-					"strValue":"71",
+					"strValue":"108",
 					"title":"横坐标",
 					"type":"java.lang.Integer",
-					"value":"71"
+					"value":"108"
 				},
 				"y":{
 					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
 					"disable":false,
 					"index":5,
 					"name":"y",
-					"strValue":"37",
+					"strValue":"104",
 					"title":"纵坐标",
 					"type":"java.lang.Integer",
-					"value":"37"
+					"value":"104"
 				},
 				"opaque":{
 					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
@@ -116,7 +116,7 @@
 					"strValue":"",
 					"title":"字体",
 					"type":"java.awt.Font",
-					"value":"java.awt.Font[family=Dialog,name=,style=plain,size=12]"
+					"value":""
 				},
 				"fontColor":{
 					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
@@ -183,212 +183,10 @@
 					"disable":false,
 					"index":17,
 					"name":"backgroundTransparence",
-					"strValue":"1",
+					"strValue":"0.3",
 					"title":"背景透明度",
 					"type":"java.lang.Float",
-					"value":"1.0"
-				},
-				"paint":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":18,
-					"name":"paint",
-					"strValue":"",
-					"title":"背景绘制",
-					"type":"org.fswingui.plaf.tools.paint.AbstractPaint",
-					"value":""
-				}
-			},
-			"viewClassName":"org.fswingui.tools.gui.component.DivPanel",
-			"zorder":0,
-			"zorders":{"@type":"java.util.LinkedHashMap"}
-		},
-		"0.18290082952782638":{
-			"@type":"org.fswingui.tools.frame.model.config.BaseDataConfig",
-			"contained":false,
-			"divClassName":"org.fswingui.tools.gui.component.extra.BaseDiv",
-			"id":"0.18290082952782638",
-			"leaf":true,
-			"propertys":{"@type":"java.util.LinkedHashMap",
-				"name":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":0,
-					"name":"name",
-					"strValue":"0.18290082952782638",
-					"title":"名称",
-					"type":"java.lang.String",
-					"value":"0.18290082952782638"
-				},
-				"subjectID":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":1,
-					"name":"subjectID",
-					"strValue":"nb",
-					"title":"主题",
-					"type":"org.fswingui.plaf.SubjectEntity",
-					"value":""
-				},
-				"width":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":2,
-					"name":"width",
-					"strValue":"120",
-					"title":"宽",
-					"type":"java.lang.Integer",
-					"value":"120"
-				},
-				"height":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":3,
-					"name":"height",
-					"strValue":"80",
-					"title":"高",
-					"type":"java.lang.Integer",
-					"value":"80"
-				},
-				"x":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":4,
-					"name":"x",
-					"strValue":"123",
-					"title":"横坐标",
-					"type":"java.lang.Integer",
-					"value":"123"
-				},
-				"y":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":5,
-					"name":"y",
-					"strValue":"106",
-					"title":"纵坐标",
-					"type":"java.lang.Integer",
-					"value":"106"
-				},
-				"opaque":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":6,
-					"name":"opaque",
-					"strValue":"false",
-					"title":"透明",
-					"type":"java.lang.Boolean",
-					"value":"false"
-				},
-				"arrangement":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":7,
-					"name":"arrangement",
-					"strValue":"0",
-					"title":"图文位置",
-					"type":"java.lang.Integer",
-					"value":"0"
-				},
-				"disableText":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":8,
-					"name":"disableText",
-					"strValue":"true",
-					"title":"禁止文本",
-					"type":"java.lang.Boolean",
-					"value":"true"
-				},
-				"text":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":9,
-					"name":"text",
-					"strValue":"",
-					"title":"文本",
-					"type":"java.lang.String",
-					"value":""
-				},
-				"font":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":10,
-					"name":"font",
-					"strValue":"",
-					"title":"字体",
-					"type":"java.awt.Font",
-					"value":"java.awt.Font[family=Dialog,name=,style=plain,size=12]"
-				},
-				"fontColor":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":11,
-					"name":"fontColor",
-					"strValue":"",
-					"title":"字体颜色",
-					"type":"java.awt.Color",
-					"value":""
-				},
-				"textTransparence":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":12,
-					"name":"textTransparence",
-					"strValue":"1",
-					"title":"文本透明度",
-					"type":"java.lang.Float",
-					"value":"1.0"
-				},
-				"disableIcon":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":13,
-					"name":"disableIcon",
-					"strValue":"true",
-					"title":"禁止图标",
-					"type":"java.lang.Boolean",
-					"value":"true"
-				},
-				"icon":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":14,
-					"name":"icon",
-					"strValue":"",
-					"title":"图标",
-					"type":"javax.swing.Icon",
-					"value":""
-				},
-				"iconTransparence":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":15,
-					"name":"iconTransparence",
-					"strValue":"1",
-					"title":"图标透明度",
-					"type":"java.lang.Float",
-					"value":"1.0"
-				},
-				"backImg":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":16,
-					"name":"backImg",
-					"strValue":"",
-					"title":"背景图",
-					"type":"javax.swing.Icon",
-					"value":""
-				},
-				"backgroundTransparence":{
-					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
-					"disable":false,
-					"index":17,
-					"name":"backgroundTransparence",
-					"strValue":"1",
-					"title":"背景透明度",
-					"type":"java.lang.Float",
-					"value":"1.0"
+					"value":"0.3"
 				},
 				"paint":{
 					"@type":"org.fswingui.tools.frame.model.config.PropertyUnitConfig",
@@ -406,8 +204,7 @@
 			"zorders":{"@type":"java.util.LinkedHashMap"}
 		}
 	},
-	"currentMainColor":"ffff6633",
-	"currentStyle":"style1",
+	"currentMainColor":"",
 	"panit":{"@type":"java.util.LinkedHashMap",
 		"paints":{
 			"@type":"org.fswingui.plaf.config.PaintConfig",
@@ -426,7 +223,7 @@
 					"baseParameterCodingType":"org.fswingui.plaf.tools.paint.BaseParameterCoding",
 					"defaultValue":"ffffc800",
 					"type":"java.awt.Color",
-					"value":"ffffc800"
+					"value":"ff9933ff"
 				},
 				"ColorDestination":{
 					"@type":"org.fswingui.plaf.config.ParameterConfig",
@@ -486,8 +283,8 @@
 					"components":[
 						{
 							"id":"0",
-							"title":"JPanel",
-							"value":"JPanel"
+							"title":"JTree",
+							"value":"JTree"
 						},
 						{
 							"id":"1",
@@ -496,28 +293,38 @@
 						},
 						{
 							"id":"2",
-							"title":"ListUI",
-							"value":"ListUI"
-						},
-						{
-							"id":"3",
 							"title":"ButtonUI",
 							"value":"ButtonUI"
 						},
 						{
+							"id":"3",
+							"title":"JPanel",
+							"value":"JPanel"
+						},
+						{
 							"id":"4",
-							"title":"LabelUI",
-							"value":"LabelUI"
+							"title":"TreeUI",
+							"value":"TreeUI"
 						},
 						{
 							"id":"5",
+							"title":"ListUI",
+							"value":"ListUI"
+						},
+						{
+							"id":"6",
 							"title":"TableHeaderUI",
 							"value":"TableHeaderUI"
 						},
 						{
-							"id":"6",
+							"id":"7",
 							"title":"MenuBarUI",
 							"value":"MenuBarUI"
+						},
+						{
+							"id":"8",
+							"title":"LabelUI",
+							"value":"LabelUI"
 						}
 					],
 					"id":"primarily",
@@ -526,7 +333,7 @@
 							"@type":"org.fswingui.tools.frame.model.config.NodeCofig",
 							"id":"main",
 							"title":"默认",
-							"value":"aaa"
+							"value":"aa"
 						}
 					},
 					"title":"主色"
@@ -640,41 +447,24 @@
 		}
 	},
 	"subjectEntitys":{"@type":"java.util.LinkedHashMap",
-		"aaa":{
+		"aa":{
 			"@type":"org.fswingui.plaf.config.SubjectEntityConfig",
 			"arrangement":0,
 			"backgroundIcon":"test/old/org/fswingui/plaf/backgound.jpg",
-			"backgroundTransparence":1F,
+			"backgroundTransparence":0.3F,
 			"disableIcon":true,
 			"disableText":true,
-			"font":"java.awt.Font[family=Dialog,name=,style=plain,size=12]",
-			"fontColor":"",
-			"icon":"",
-			"iconTransparence":1F,
-			"opaque":false,
-			"paint":"org.fswingui.paint.1000",
-			"subjectID":"aaa",
-			"text":"",
-			"textTransparence":1F
-		},
-		"nb":{
-			"@type":"org.fswingui.plaf.config.SubjectEntityConfig",
-			"arrangement":0,
-			"backgroundIcon":"test/old/org/fswingui/plaf/backgound.jpg",
-			"backgroundTransparence":1F,
-			"disableIcon":true,
-			"disableText":true,
-			"font":"java.awt.Font[family=Dialog,name=,style=plain,size=12]",
+			"font":"",
 			"fontColor":"",
 			"icon":"",
 			"iconTransparence":1F,
 			"opaque":false,
 			"paint":"dd",
-			"subjectID":"nb",
+			"subjectID":"aa",
 			"text":"",
 			"textTransparence":1F
 		}
 	},
-	"zorders":{"@type":"java.util.LinkedHashMap",1:"0.6082894772969734",0:"0.18290082952782638"
+	"zorders":{"@type":"java.util.LinkedHashMap",0:"0.327964251191065"
 	}
 }

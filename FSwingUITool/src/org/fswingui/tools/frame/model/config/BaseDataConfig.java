@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import org.fswingui.tools.frame.model.CurrentData;
 import org.fswingui.tools.frame.model.MapPropertys;
-import org.fswingui.utility.MapSort;
+import org.fswingui.utilities.MapSort;
 
 /**
  *

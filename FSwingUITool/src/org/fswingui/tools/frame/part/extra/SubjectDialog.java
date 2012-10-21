@@ -25,7 +25,7 @@ import org.fswingui.plaf.SubjectEntity;
 import org.fswingui.tools.frame.model.CurrentData;
 import org.fswingui.tools.frame.part.base.PropertyPanel;
 import org.fswingui.tools.frame.part.base.pub.VectorData;
-import org.fswingui.utility.SpringUtilities;
+import org.fswingui.utilities.SpringUtilities;
 
 /**
  *

@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -49,8 +50,8 @@ import org.fswingui.tools.frame.part.extra.StylePanelExtra;
 import org.fswingui.tools.gui.component.DivPanel;
 import org.fswingui.tools.gui.component.extra.BaseDiv;
 import org.fswingui.tools.gui.component.extra.ComDiv;
-import org.fswingui.utility.MapSort;
-import org.fswingui.utility.Utility;
+import org.fswingui.utilities.MapSort;
+import org.fswingui.utilities.Utility;
 
 /**
  *
@@ -162,7 +163,8 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
         File f=new File(FGuiConfig.configName);
         if(!f.exists()){
             f.mkdirs();
-        }         
+        } 
+       
         return writeConfig(FGuiConfig.configName);
     }
     
@@ -183,6 +185,7 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
                 filePathName=f.getName();
             }
         }
+        
         CurrentData cd=dataBus.getCurrentData();
         cd.getAllData().clear();
         CurrentData.getPaints().getItems().clear();

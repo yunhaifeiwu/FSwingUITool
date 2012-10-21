@@ -15,7 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.table.TableModel;
-import org.fswingui.utility.Utility;
+import org.fswingui.utilities.Utility;
 import org.fswingui.plaf.tools.paint.AbstractPaint;
 import org.fswingui.plaf.tools.paint.RootPaint;
 import org.fswingui.plaf.tools.paint.RootPaint.PaintChangeEvent;

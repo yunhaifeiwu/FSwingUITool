@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import org.fswingui.plaf.tools.paint.AbstractPaint;
 import org.fswingui.tools.frame.model.CurrentData;
-import org.fswingui.utility.Utility;
+import org.fswingui.utilities.Utility;
 
 /**
  *

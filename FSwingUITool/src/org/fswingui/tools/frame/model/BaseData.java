@@ -30,7 +30,7 @@ import org.fswingui.tools.frame.model.MapPropertys.MapPropertyChangeEvent;
 import org.fswingui.tools.frame.model.MapPropertys.PropertyUnit;
 import org.fswingui.tools.gui.component.extra.Div;
 import org.fswingui.tools.gui.component.extra.BaseDiv;
-import org.fswingui.utility.MapSort;
+import org.fswingui.utilities.MapSort;
 
 /**
  *

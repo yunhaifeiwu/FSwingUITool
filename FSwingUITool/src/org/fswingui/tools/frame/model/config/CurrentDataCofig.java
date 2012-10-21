@@ -11,7 +11,7 @@ import java.util.Stack;
 import org.fswingui.plaf.SubjectEntity;
 import org.fswingui.plaf.config.PaintConfig;
 import org.fswingui.plaf.config.SubjectEntityConfig;
-import org.fswingui.utility.MapSort;
+import org.fswingui.utilities.MapSort;
 
 /**
  *

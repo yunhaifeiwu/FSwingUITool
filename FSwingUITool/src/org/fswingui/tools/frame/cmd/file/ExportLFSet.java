@@ -6,6 +6,7 @@ package org.fswingui.tools.frame.cmd.file;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTree;
+import org.fswingui.tools.frame.MainFrame;
 import org.fswingui.tools.frame.cmd.Command;
 import org.fswingui.tools.frame.model.DataBus;
 import org.fswingui.tools.frame.part.extra.StylePanelExtra;
@@ -15,7 +16,7 @@ import org.fswingui.tools.frame.part.extra.StylePanelExtra;
  * @author Administrator
  */
 public class ExportLFSet extends Command  {
-    private String stylePanelName="stylePanelExtra";
+    private String stylePanelName=MainFrame.STYLE_PANEL;
     private transient StylePanelExtra stylePanel;
     private transient JTree tree;
     public ExportLFSet(DataBus dataBus, String id) {

@@ -27,7 +27,7 @@ import javax.swing.SpringLayout;
 import javax.swing.plaf.basic.BasicComboBoxEditor;
 import javax.swing.plaf.metal.MetalComboBoxEditor;
 import org.fswingui.pubcomponent.JFontChooser;
-import org.fswingui.utility.SpringUtilities;
+import org.fswingui.utilities.SpringUtilities;
  
 public class MainColortPanel extends JPanel {
    
