@@ -18,6 +18,8 @@ import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
+import org.fswingui.plaf.UIEngine;
+import org.fswingui.plaf.config.JsonConfig;
 import org.fswingui.plaf.ui.FSwingLF;
 import org.fswingui.tools.frame.model.DataBus;
 import org.fswingui.tools.frame.part.CreateCenterPanel;
@@ -83,7 +85,10 @@ public class MainFrame extends JFrame{
         c.add(new CreateWestPanel() );
         c.add(new CreateEastPanel() );
         c.add(new CreateCenterPanel() );       
-        this.createPart=c;         
+        this.createPart=c;   
+     
+          
+         
         
     }
     

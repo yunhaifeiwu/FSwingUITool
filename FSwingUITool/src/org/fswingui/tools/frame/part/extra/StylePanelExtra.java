@@ -30,6 +30,7 @@ import org.fswingui.plaf.SubjectCriterion;
 import org.fswingui.plaf.SubjectEntity;
 import org.fswingui.plaf.UIEngine;
 import org.fswingui.plaf.config.FSUIConfig;
+import org.fswingui.plaf.config.JsonConfig;
 import org.fswingui.plaf.config.SubjectEntityConfig;
 import org.fswingui.plaf.tools.paint.AbstractPaint;
 import org.fswingui.plaf.tools.paint.BaseParameterCoding;
@@ -69,20 +70,20 @@ public class StylePanelExtra extends StylePanel {
     }
     
     public void produceSubjectStoreAndSubjectIndex(DefaultMutableTreeNode root) {
-        Logger log = Logger.getLogger(StylePanelExtra.class.getName());  
-        log.setLevel(Level.INFO);  
-        log.addHandler(Utility.getMyFileHandler("F:/testlog%g.log"));  
-        try {
+        
+           
             Enumeration  rooten=root.children();//处理style
             while(rooten.hasMoreElements()){
                 DefaultMutableTreeNode styleNode=(DefaultMutableTreeNode) rooten.nextElement();
                 TreeData styleData=(TreeData) styleNode.getUserObject();
                 Style style=(Style) styleData.userData;     
+                   
                 if(style!=null && style.getId()!=null && style.getMainColor()!=null){
+                     
                      UIEngine.getConfig().getStyleMainColor().put(style.getId(),style.getMainColor());
                 }
                
-                    
+                   
                 Enumeration  styleen=styleNode.children();
                 while (styleen.hasMoreElements()){
                     DefaultMutableTreeNode subNode=(DefaultMutableTreeNode) styleen.nextElement();
@@ -116,6 +117,7 @@ public class StylePanelExtra extends StylePanel {
                             
                         }
                     } 
+                   
                     node1 =(DefaultMutableTreeNode) subNode.getChildAt(1);
                     if (node1==null) continue;
                     data1=(TreeData) node1.getUserObject();
@@ -138,24 +140,20 @@ public class StylePanelExtra extends StylePanel {
             
             
             
-      
-                URI uri = (ClassLoader.getSystemResource("/")).toURI();
-                String ss=uri.getPath();
-                String[] strs=ss.split("/\\w*/\\w*/\\w*\\w*$");
-                UIEngine.getConfig().writeConfig(strs[0]+"/"+FSUIConfig.configName);
+               
+//                URI uri = (StylePanelExtra.class.getResource("/")).toURI();
+//                JsonConfig.test1("ClassLoader;===getSystemResource 后======;"); 
+//                String ss=uri.getPath();
+//                JsonConfig.test1("uri;===getSystemResource 后======;"+uri.getPath()); 
+//                String[] strs=ss.split("/\\w*/\\w*/\\w*\\w*$");
+              
+                UIEngine.getConfig().writeConfig(FSUIConfig.configName);
     //            UIEngine.getConfig().writeConfig("c:/aa.json");
 
     //            UIEngine.getConfig().writeConfig();
             
     //           str=uri.getPath()+str.replaceAll("[.]", "/");
-        } catch (URISyntaxException ex) {
-            ex.printStackTrace();
-            StringWriter sw = new StringWriter();  
-            ex.printStackTrace(new PrintWriter(sw));  
-            log.severe(sw.toString());  
-            Logger.getLogger(StylePanelExtra.class.getName()).log(Level.SEVERE, null, ex);
-            Logger.getLogger(StylePanelExtra.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
        
 
         
@@ -164,7 +162,7 @@ public class StylePanelExtra extends StylePanel {
   
     
     public void exportLFSet(){
-         
+       
         if (tree==null || tree.getModel()==null|| tree.getModel().getRoot()==null ) 
         {
             return;
