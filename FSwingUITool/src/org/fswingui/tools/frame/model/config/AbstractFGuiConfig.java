@@ -561,6 +561,7 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
         StylePanel  treePanel= (StylePanel) dataBus.getGuiParts().
                 get(MainFrame.STYLE_PANEL);
         if (treePanel==null) return ;
+        CurrentData cd=dataBus.getCurrentData();
         
         JTree tree=treePanel.getTree();
         if (tree==null) return ;
@@ -581,9 +582,12 @@ public abstract class AbstractFGuiConfig implements FGuiConfig{
             
             Style style=new Style();
             style.setId(scfg.getId());
-            style.setTitle(scfg.getTitle());               
-            style.setMainColor(Utility.fromHexString(scfg.getMainColor()));            
-            CurrentData.getStyles().put(style.getId(), style); 
+            style.setTitle(scfg.getTitle());         
+            Color color=Utility.fromHexString(scfg.getMainColor());
+            cd.setCurrentMainColor(color);
+            style.setMainColor(color);            
+            CurrentData.getStyles().put(style.getId(), style);
+            cd.setCurrentStyle(style.getId());
             TreeData data=new TreeData(style.getId(),style.getTitle(),style);
             snode.setUserObject(data);         
             root.add(snode);

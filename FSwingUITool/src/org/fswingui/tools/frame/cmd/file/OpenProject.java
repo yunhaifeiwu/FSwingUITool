@@ -6,7 +6,9 @@ package org.fswingui.tools.frame.cmd.file;
 
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import org.fswingui.tools.frame.MainFrame;
 import org.fswingui.tools.frame.cmd.Command;
 import org.fswingui.tools.frame.model.DataBus;
 import org.fswingui.tools.frame.model.config.FGuiConfig;
@@ -54,6 +56,11 @@ public class OpenProject extends Command  {
         }
          
         config.readConfig(filePathName);
+        JFrame frame=(JFrame) dataBus.getGuiParts().get(MainFrame.ROOT_FRAME);
+        if(frame!=null){            
+            frame.revalidate();
+            frame.repaint();
+        }
     }
 }
 

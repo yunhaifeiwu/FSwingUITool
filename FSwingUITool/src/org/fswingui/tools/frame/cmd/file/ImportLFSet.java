@@ -29,15 +29,12 @@ public class ImportLFSet extends Command  {
     public void excute() {
         
         UIEngine.init(FSwingLF.SET_LOAD);
-        UIManager.put(UIEngine.CURRENT_COLOR, 
-                dataBus.getCurrentData().getCurrentMainColor()
-        );   
-        UIManager.put(UIEngine.CURRENT_STYLEID, 
-                dataBus.getCurrentData().getCurrentStyle()
-        );  
+           
+        UIEngine.setCurrentMainColor(dataBus.getCurrentData().getCurrentMainColor());
+        UIEngine.setCurrentStyle(dataBus.getCurrentData().getCurrentStyle());
         
         JFrame f=(JFrame) dataBus.getGuiParts().get(MainFrame.ROOT_FRAME);
-        if(f!=null){
+        if(f!=null){            
             f.revalidate();
             f.repaint();
         }

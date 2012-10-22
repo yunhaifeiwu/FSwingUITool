@@ -127,6 +127,7 @@ public class MainColortPanelExtra extends MainColortPanel
         
     } 
 
+    
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if( CurrentData.class.isAssignableFrom(evt.getSource().getClass()) &&
@@ -139,9 +140,15 @@ public class MainColortPanelExtra extends MainColortPanel
         ){
             String s=(String)evt.getNewValue();
             if(s!=null && !s.equals("")) {
-                styleBox.removeItem(s);
-                styleBox.addItem(s);
-                styleBox.setSelectedItem(s);
+                boolean bl=true;
+                
+           
+               
+ 
+                if(!styleVector.contains(s)) {
+                    styleVector.add(s);
+                }
+               styleBox.setSelectedItem(s);
             }
             
         }
