@@ -164,3 +164,5 @@ pip-log.txt
 !/FSwingUITool/src/org/fswingui/utility/Utility.java
 /FSwingUITool/nbproject/private/
 /JavaApplication4/nbproject/private/
+/JavaApplication5/nbproject/private/
+/mavenproject1/target/

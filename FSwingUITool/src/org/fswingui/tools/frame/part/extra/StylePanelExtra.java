@@ -140,41 +140,7 @@ public class StylePanelExtra extends StylePanel {
                 }
                 
             } 
-//        Logger log1=Logger.getGlobal();
-//        Logger log2=Logger.getLogger("java.awt.event.EventDispatchThread");
-//        log1.setLevel(Level.ALL);
-//        log2.setLevel(Level.ALL);
-//        log1.setLevel(Level.SEVERE);
-//        log2.setLevel(Level.SEVERE);
-//        FileHandler fh=null;
-//        try {
-//            fh=new FileHandler("e:/testlog%g.log");
-//        } catch (IOException ex) {
-//            Logger.getLogger(StylePanelExtra.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (SecurityException ex) {
-//            Logger.getLogger(StylePanelExtra.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        fh.setFormatter(new SimpleFormatter());
-//        log1.addHandler(fh);
-////        log2.addHandler(fh); 
-//        String[] strs = null;
-//        try {
-//            URI uri = (ClassLoader.getSystemResource("")).toURI();
-            
-    //                JsonConfig.test1("ClassLoader;===getSystemResource 后======;"); 
-//                    log1.log(Level.SEVERE,"值为："+uri);
-//                    String ss=uri.getPath();
-//                   
-//                    strs=ss.split("/\\w*/\\w*/\\w*\\w*$");
-////                    String[] strs=ss.split("/\\w*/\\w*/\\w*\\w*$");
-//        } catch (Exception ex) {
-//            log1.log(Level.SEVERE,null,ex);
-////            log2.log(Level.SEVERE, null, ex);
-////            log1.log(Level.SEVERE, "uri出错");
-//            Logger.getLogger(StylePanelExtra.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//                  log1.log(Level.INFO,strs[0]+"/"+FSUIConfig.configName);
-//                  UIEngine.getConfig().writeConfig(strs[0]+"/"+FSUIConfig.configName);
+        
                   
                 UIEngine.getConfig().writeConfig(FSUIConfig.configName);
     //            UIEngine.getConfig().writeConfig("c:/aa.json");
